@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - FallDetector
+  - Bullet
+  - Shadow
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - Platfroms
+  - Water
+  - UI
+  - Background
+  - Character
+  - 
+  - post
+  - Wall
+  - Sky
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Bullet
+    uniqueID: 1872841263
+    locked: 0
+  - name: Main Character
+    uniqueID: 2382696539
+    locked: 0
+  - name: New Layer
+    uniqueID: 4227737737
+    locked: 0
+  - name: New Layer
+    uniqueID: 2460432923
+    locked: 0
+  - name: Background
+    uniqueID: 3068212393
+    locked: 0

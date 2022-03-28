@@ -1,0 +1,528 @@
+fileFormatVersion: 2
+guid: b05c7884cef2baf47a264007e05253f4
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1298913006448269735
+    second: tiles lvl_1 (underground)_0
+  - first:
+      213: -124037977149958660
+    second: tiles lvl_1 (underground)_1
+  - first:
+      213: 6387152008495232436
+    second: tiles lvl_1 (underground)_2
+  - first:
+      213: -2580205733833928142
+    second: tiles lvl_1 (underground)_3
+  - first:
+      213: -8499341500671049785
+    second: tiles lvl_1 (underground)_4
+  - first:
+      213: -3297109758111843716
+    second: tiles lvl_1 (underground)_5
+  - first:
+      213: -271878327949718593
+    second: tiles lvl_1 (underground)_6
+  - first:
+      213: 973568368800315526
+    second: tiles lvl_1 (underground)_7
+  - first:
+      213: -5679618502429148518
+    second: tiles lvl_1 (underground)_8
+  - first:
+      213: -3541031192439279659
+    second: tiles lvl_1 (underground)_9
+  - first:
+      213: -4938510365741866763
+    second: tiles lvl_1 (underground)_10
+  - first:
+      213: -3895878122549065912
+    second: tiles lvl_1 (underground)_11
+  - first:
+      213: -7912126273195324030
+    second: tiles lvl_1 (underground)_12
+  - first:
+      213: -4422981811817271059
+    second: tiles lvl_1 (underground)_13
+  - first:
+      213: -1272032053707168504
+    second: tiles lvl_1 (underground)_14
+  - first:
+      213: -7582234743496913136
+    second: tiles lvl_1 (underground)_15
+  - first:
+      213: 3622026631623111380
+    second: tiles lvl_1 (underground)_16
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 30
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: tiles lvl_1 (underground)_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 270
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9562488a08559fde0800000000000000
+      internalID: -1298913006448269735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles lvl_1 (underground)_1
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 270
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf59151fd14574ef0800000000000000
+      internalID: -124037977149958660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles lvl_1 (underground)_2
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 270
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b5f7c049e8b3a850800000000000000
+      internalID: 6387152008495232436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles lvl_1 (underground)_3
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 270
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 232176b3e84413cd0800000000000000
+      internalID: -2580205733833928142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles lvl_1 (underground)_4
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 270
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cf34c3cfe54c0a80800000000000000
+      internalID: -8499341500671049785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles lvl_1 (underground)_5
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 270
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7af442d4205e32d0800000000000000
+      internalID: -3297109758111843716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles lvl_1 (underground)_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 240
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbb0e68e9181a3cf0800000000000000
+      internalID: -271878327949718593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles lvl_1 (underground)_7
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 240
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68836e2f54fc28d00800000000000000
+      internalID: 973568368800315526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles lvl_1 (underground)_8
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 240
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9a79fe5011fd21b0800000000000000
+      internalID: -5679618502429148518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles lvl_1 (underground)_9
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 240
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5df241444eabbdec0800000000000000
+      internalID: -3541031192439279659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles lvl_1 (underground)_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 210
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f02f5adcf2e67bb0800000000000000
+      internalID: -4938510365741866763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles lvl_1 (underground)_11
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 210
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8474f312d7f0fe9c0800000000000000
+      internalID: -3895878122549065912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles lvl_1 (underground)_12
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 210
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28d4824231b723290800000000000000
+      internalID: -7912126273195324030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles lvl_1 (underground)_13
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 210
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de03e92e9796e92c0800000000000000
+      internalID: -4422981811817271059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles lvl_1 (underground)_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 180
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 805afdf2695d85ee0800000000000000
+      internalID: -1272032053707168504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles lvl_1 (underground)_15
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 180
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01fcd365cad76c690800000000000000
+      internalID: -7582234743496913136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles lvl_1 (underground)_16
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 180
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d276e8f706044230800000000000000
+      internalID: 3622026631623111380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
