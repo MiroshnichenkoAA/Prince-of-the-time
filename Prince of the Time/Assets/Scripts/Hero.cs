@@ -7,29 +7,11 @@ public class Hero : MonoBehaviour
    
    
     [SerializeField] private float speed = 3f;
-    [SerializeField] private float sprintSpeed = 7f;
-    [SerializeField] private float staminaSpeed = 2f;
-    [SerializeField] private float stamina = 5f;
-    [SerializeField] private float dashCD = 1f;
     [SerializeField] private float jumpForce = 15f;
-    [SerializeField] private float DashForce = 15f;
-    [SerializeField] private float StartDashTimer = 15f;
-    [SerializeField] private float CurrentDashTimer;
-    [SerializeField] private float DashDirection;
-
     [SerializeField] public GameObject prefab_shadow;
-    
+    [SerializeField] public Turret turret;
 
-    //WallSliding
-    [SerializeField] private float wallSlideSpeed = 0;
-    [SerializeField] private LayerMask wallLayer;
-    [SerializeField] private Transform wallCheckPoint;
-    [SerializeField] Vector2 wallCheckSize;
-    [SerializeField] public bool isTouchingWall;
-    [SerializeField] private bool isWallSliding;
-
-    [SerializeField] bool isDashing;
-
+    //Links to component
     private Rigidbody2D rb;
     private SpriteRenderer sprite;
     private Animator anim;
@@ -41,7 +23,7 @@ public class Hero : MonoBehaviour
     public int maxHealth;
     public int currentHealth;
     public HealthBar healthBar;
-    public int damageTurret;
+    
 
     //Tile jump time
     public float handTime=2;
@@ -73,17 +55,11 @@ public class Hero : MonoBehaviour
 
     }
     
-private void FixedUpdate()
-    {
-    CheckWorld();
-        
-    }
-
     private void Update()
     {  
         
-            if (rb.velocity.y == 0)
-                State = StatesA.idle;
+      if (rb.velocity.y == 0)
+       State = StatesA.idle;
 
 
         if (rb.velocity.y == 0)
@@ -95,28 +71,6 @@ private void FixedUpdate()
             handCounter-=Time.deltaTime;
         }
 
-        if (Input.GetButton("Horizontal") && !Input.GetKey(KeyCode.LeftShift))
-            {
-
-                Run();
-
-                stamina += staminaSpeed * Time.deltaTime;
-                if (stamina > 5) stamina = 5;
-            }
-
-
-            if (Input.GetKey(KeyCode.LeftShift) && rb.velocity.y == 0 && stamina > 0)
-            {
-
-                Sprint();
-                stamina -= 2 * staminaSpeed * Time.deltaTime;
-            }
-            else if (Input.GetKey(KeyCode.LeftShift) && rb.velocity.y == 0)
-                Run();
-
-
-        
-        
 
         if (Input.GetButtonDown("Jump"))
         {
@@ -133,32 +87,13 @@ private void FixedUpdate()
         if (rb.velocity.y > 0 && Input.GetButtonUp("Jump"))
             SmallJump();
 
-
-        float movX = Input.GetAxis("Horizontal");
-
-
-            if ((Input.GetMouseButtonDown(0)) && movX != 0 && dashCD == 1)
-            {
-                isDashing = true;
-                CurrentDashTimer = StartDashTimer;
-                rb.velocity = Vector2.zero;
-                DashDirection = (int)movX;
-            }
+        if (Input.GetButton("Horizontal"))
+      
+            Run();
 
 
-            if (isDashing)
-            {
-                State = StatesA.dash;
-                rb.velocity = transform.right * DashDirection * DashForce;
-                dashCD = 0;
-                CurrentDashTimer -= Time.deltaTime;
-                if (CurrentDashTimer <= 0)
-                    isDashing = false;
 
-            }
-
-            WallSlide();
-        if(rb.velocity.y==0)
+            if (rb.velocity.y==0)
             fallDetector.transform.position = new Vector3(transform.position.x, transform.position.y-10,0);
 
             if (currentHealth <= 0)
@@ -168,11 +103,7 @@ private void FixedUpdate()
                 healthBar.SetMaxHealth(maxHealth);
 
             }
-            if (dashCD < 1)
-            {
-                dashCD += Time.deltaTime;
-            }
-            else dashCD = 1;
+           
 
         
     }
@@ -191,33 +122,7 @@ private void FixedUpdate()
             TakeDamageTurret();
         }
     }
-    private void WallSlide()
-    {
-        if (isTouchingWall)
-        {
-            State = StatesA.wallslide;
-        }
-   
-
-        if (isTouchingWall /* && !grounded */ && rb.velocity.y < 0)
-        {
-            isWallSliding = true;
-            
-        }
-        else
-        { if(rb.velocity.y != 0 && rb.IsSleeping() == false) 
-                State = StatesA.jump;
-            isWallSliding = false;
-        }
-        if (isWallSliding)
-        {
-            
-            rb.velocity = new Vector2(rb.velocity.x, -wallSlideSpeed);
-        }
-
-
-
-    }
+    
 
 
 
@@ -231,51 +136,26 @@ private void FixedUpdate()
         sprite.flipX = dir.x < 0.0f;
     }
 
-
-
-
-    private void CheckWorld()
-    {
-        isTouchingWall = Physics2D.OverlapBox(wallCheckPoint.position, wallCheckSize, 0, wallLayer);
-        }
-
-
-
-
-
-private void Sprint()
-    {
-        if (rb.velocity.y == 0) State = StatesA.run;
-        Vector3 dir = transform.right * Input.GetAxis("Horizontal");
-
-        transform.position = Vector3.MoveTowards(transform.position, transform.position + dir, sprintSpeed * Time.deltaTime);
-
-        sprite.flipX = dir.x < 0.0f;
-    }
-
-
     private void Jump()
     {
         State = StatesA.jump;
         rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
         jumpBufferCount = 0;
     }
+
     private void SmallJump()
     {
         State = StatesA.jump;
         rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.25f) ;
     }
 
+
     public void TakeDamageTurret()
     {
-        currentHealth -= damageTurret;
+        currentHealth -= turret.damageTurret;
         healthBar.SetHealth(currentHealth);
 
     }
-
-   
-
-
 }
 
 public enum StatesA

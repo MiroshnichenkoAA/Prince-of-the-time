@@ -7,6 +7,7 @@ public class Turret : MonoBehaviour
     public Transform firepoint;
     private Animator anim;
     public GameObject bullet;
+    public int damageTurret;
     float timebetween;
     public float starttimebetween;
     bool isOnTurretArea=false;

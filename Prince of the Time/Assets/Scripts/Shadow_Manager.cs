@@ -25,6 +25,7 @@ public class Shadow_Manager : MonoBehaviour
     public bool shadowExist=false;
     public bool shadowCancel = false;
     [SerializeField] public Rigidbody2D heroRB;
+    [SerializeField] public RigidbodyConstraints rigidbodyConstraints;
     [SerializeField] public BoxCollider2D heroCollider;
     
     void Start()
@@ -35,7 +36,7 @@ public class Shadow_Manager : MonoBehaviour
 
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
         
@@ -43,6 +44,7 @@ public class Shadow_Manager : MonoBehaviour
         {
             hero_script.enabled = true;
             heroRB.bodyType = RigidbodyType2D.Dynamic;
+
             heroCollider.enabled = true;
             mainHero.transform.position = shadowClone.transform.position;
             shadowExist = false;

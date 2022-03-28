@@ -226,6 +226,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &25046280 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1816488810417330718, guid: 716a426deeaae934c8087b553fcef5e7, type: 3}
+  m_PrefabInstance: {fileID: 274079691}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a970ab3ea4d36042a690188a15c068c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &62488963
 GameObject:
   m_ObjectHideFlags: 0
@@ -642,6 +653,10 @@ PrefabInstance:
     - target: {fileID: 1816488810417330717, guid: 716a426deeaae934c8087b553fcef5e7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1816488810417330718, guid: 716a426deeaae934c8087b553fcef5e7, type: 3}
+      propertyPath: damageTurret
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1816488810417330725, guid: 716a426deeaae934c8087b553fcef5e7, type: 3}
       propertyPath: m_Name
@@ -2270,6 +2285,7 @@ MonoBehaviour:
   shadowExist: 0
   shadowCancel: 0
   heroRB: {fileID: 860503602}
+  rigidbodyConstraints: 126
   heroCollider: {fileID: 860503601}
 --- !u!4 &620304108
 Transform:
@@ -3424,31 +3440,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
-  sprintSpeed: 7
-  staminaSpeed: 2
-  stamina: 5
-  dashCD: 1
   jumpForce: 14
-  DashForce: 8
-  StartDashTimer: 0.1
-  CurrentDashTimer: 0
-  DashDirection: 0
   prefab_shadow: {fileID: 0}
-  wallSlideSpeed: 0
-  wallLayer:
-    serializedVersion: 2
-    m_Bits: 1024
-  wallCheckPoint: {fileID: 1407195492}
-  wallCheckSize: {x: 1, y: 0.5}
-  isTouchingWall: 0
-  isWallSliding: 0
-  isDashing: 0
+  turret: {fileID: 25046280}
   respawnPoint: {x: -19.39, y: -3.44, z: 0}
   fallDetector: {fileID: 344116981}
   maxHealth: 20
   currentHealth: 0
   healthBar: {fileID: 530398493}
-  damageTurret: 5
   handTime: 0.2
   handCounter: 0
   jumpBufferLength: 0.2
