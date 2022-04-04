@@ -179,25 +179,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
-  sprintSpeed: 7
-  staminaSpeed: 2
-  stamina: 5
-  dashCD: 1
-  jumpForce: 20
-  DashForce: 15
-  StartDashTimer: 15
-  CurrentDashTimer: 0
-  DashDirection: 0
+  jumpForce: 23
   hero_script: {fileID: 0}
   shadow_Manager: {fileID: 0}
-  wallSlideSpeed: 0
-  wallLayer:
-    serializedVersion: 2
-    m_Bits: 1024
-  wallCheckSize: {x: 1, y: 0.5}
-  isTouchingWall: 0
-  isWallSliding: 0
-  isDashing: 0
   respawnPoint: {x: 0, y: 0, z: 0}
   maxHealth: 0
   currentHealth: 0

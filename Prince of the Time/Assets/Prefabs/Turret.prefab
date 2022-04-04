@@ -708,9 +708,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1816488810417330725}
-  m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -1.606667, y: 1.4900005, z: 0.25599992}
-  m_LocalScale: {x: 2.3333328, y: 2.3333328, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.606667, y: 1.4900005, z: 0}
+  m_LocalScale: {x: 8, y: 8, z: 0}
   m_Children:
   - {fileID: 1816488809683756271}
   - {fileID: 1816488809147307870}
@@ -766,7 +766,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 58
   m_Sprite: {fileID: 5636049975252699944, guid: eeb109799d59897448068db5ff78ab26, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.03604484, g: 0.7372033, b: 0.8490566, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -809,6 +809,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firepoint: {fileID: 1816488809683756271}
   bullet: {fileID: 1597626269698618991, guid: 412ab5f4872e6e247845f8db88fea402, type: 3}
+  damageTurret: 5
   starttimebetween: 0.5
 --- !u!61 &1816488810417330713
 BoxCollider2D:
