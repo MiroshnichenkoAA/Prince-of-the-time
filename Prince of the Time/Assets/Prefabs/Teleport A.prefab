@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 7890780427270658201}
   - component: {fileID: 7890780427270658202}
   m_Layer: 0
-  m_Name: Teleport 1
+  m_Name: Teleport A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -129,7 +129,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hero: {fileID: 0}
-  exit: {fileID: 7890780426036705661}
+  exit: {fileID: 3614075369090424910, guid: 9bd4c208a6706444695bf08de7e3d97b, type: 3}
   isTeleporting: 0
 --- !u!61 &7890780427270658202
 BoxCollider2D:

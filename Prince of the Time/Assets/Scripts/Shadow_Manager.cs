@@ -9,7 +9,7 @@ public class Shadow_Manager : MonoBehaviour
     
 
     [SerializeField] public Transform hero;
-    [SerializeField] public Transform heroMadeShadow;
+   
     [SerializeField] public Transform shadow;
     [SerializeField] public GameObject shadow_prefab;
     
@@ -22,6 +22,7 @@ public class Shadow_Manager : MonoBehaviour
     [SerializeField] private float shadowCDCounter;
     [SerializeField] public Shadow_Timer shadowTimer;
     [SerializeField] public CD_Shadow shadowCDTimer;
+  
     public bool shadowExist=false;
     public bool shadowCancel = false;
     [SerializeField] public Rigidbody2D heroRB;
@@ -59,9 +60,9 @@ public class Shadow_Manager : MonoBehaviour
         {
             heroRB.bodyType = RigidbodyType2D.Static;
             heroCollider.enabled = false;
-            heroMadeShadow = hero;
+            
             shadowClone =Instantiate(shadow_prefab, mainHero.transform.position, mainHero.transform.rotation);
-   
+            
             hero_script.enabled = false;
             shadowExist = true;
             

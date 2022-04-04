@@ -8,7 +8,6 @@ public class Hero : MonoBehaviour
    
     [SerializeField] private float speed = 3f;
     [SerializeField] private float jumpForce = 15f;
-    [SerializeField] public GameObject prefab_shadow;
     [SerializeField] public Turret turret;
 
     //Links to component
