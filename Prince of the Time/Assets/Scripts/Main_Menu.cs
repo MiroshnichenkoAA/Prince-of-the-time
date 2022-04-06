@@ -7,8 +7,8 @@ public class Main_Menu : MonoBehaviour
 {
     
     public GameObject mainMenuUI;
-    public int lastOpenedLevel=2;
-    public void StartGame()
+    
+    public void StartGame(int lastOpenedLevel)
     {
         SceneManager.LoadScene(lastOpenedLevel, LoadSceneMode.Single);
 

@@ -7,9 +7,10 @@ using UnityEngine.SceneManagement;
 public class Level_Menu : MonoBehaviour
 {   public Button[] levelButtons;
 
-    public void LevelLoad()
-    { 
-        SceneManager.LoadScene(2, LoadSceneMode.Single);
+    public void LevelLoad(int i)
+    {
+        
+        SceneManager.LoadScene(i+1, LoadSceneMode.Single);
 
     }
     public void Back()

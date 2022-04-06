@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Hero : MonoBehaviour
 {
-   
-   
+    [SerializeField] private float slowTime = 1f;
+    [SerializeField] private float slowTimeCounter = 1f;
+
     [SerializeField] private float speed = 3f;
     [SerializeField] private float jumpForce = 15f;
     [SerializeField] public Turret turret;
@@ -17,6 +18,9 @@ public class Hero : MonoBehaviour
 
     public Vector3 respawnPoint;
     public GameObject fallDetector;
+
+    [SerializeField] public GameObject lightInHandLeft;
+    [SerializeField] public GameObject lightInHandRight;
 
     //Health
     public int maxHealth;
@@ -50,15 +54,26 @@ public class Hero : MonoBehaviour
     {
         respawnPoint = transform.position;
         currentHealth= maxHealth;
+        slowTimeCounter = slowTime;
         healthBar.SetMaxHealth(maxHealth);
 
     }
     
     private void Update()
-    {  
+    {
         
-      if (rb.velocity.y == 0)
+        if (rb.velocity.y == 0)
        State = StatesA.idle;
+
+
+        if (sprite.flipX == true) {
+            lightInHandLeft.SetActive(true);
+            lightInHandRight.SetActive(false);
+        }
+        else {
+            lightInHandLeft.SetActive(false);
+            lightInHandRight.SetActive(true);
+                }
 
 
         if (rb.velocity.y == 0)
@@ -119,6 +134,7 @@ public class Hero : MonoBehaviour
         if (collision.tag=="Bullet")
         {
             TakeDamageTurret();
+            SlowTheGame();
         }
     }
     
@@ -148,12 +164,23 @@ public class Hero : MonoBehaviour
         rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.25f) ;
     }
 
+    public void SlowTheGame()
+    {  if(slowTimeCounter<=0)
+        Time.timeScale = 0.5f;
+    else
+        {
+            Time.timeScale = 1f;
+            slowTimeCounter -= Time.deltaTime;
+        }
+
+
+    }
 
     public void TakeDamageTurret()
     {
         currentHealth -= turret.damageTurret;
         healthBar.SetHealth(currentHealth);
-
+        
     }
 }
 
