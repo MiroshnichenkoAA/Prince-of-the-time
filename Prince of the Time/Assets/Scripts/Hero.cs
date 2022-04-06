@@ -36,7 +36,7 @@ public class Hero : MonoBehaviour
     public float jumpBufferLength;
     public float jumpBufferCount;
 
-    private StatesA State
+    public StatesA State
     {
         get { return (StatesA)anim.GetInteger("state"); }
         set { anim.SetInteger("state",(int)value); }

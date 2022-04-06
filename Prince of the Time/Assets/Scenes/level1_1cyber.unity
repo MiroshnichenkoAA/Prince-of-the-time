@@ -21476,6 +21476,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3225224409330689836, guid: 9bd4c208a6706444695bf08de7e3d97b, type: 3}
+      propertyPath: m_SortingOrder
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 3614075369090424896, guid: 9bd4c208a6706444695bf08de7e3d97b, type: 3}
       propertyPath: exit
       value: 
@@ -24109,6 +24113,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5115047647044310571, guid: 86a3887404396bd43a97ae46982a92c4, type: 3}
+      propertyPath: m_SortingOrder
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 7890780427270658182, guid: 86a3887404396bd43a97ae46982a92c4, type: 3}
       propertyPath: m_Name
       value: Teleport A

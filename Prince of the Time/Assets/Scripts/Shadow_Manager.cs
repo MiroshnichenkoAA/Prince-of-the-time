@@ -58,12 +58,13 @@ public class Shadow_Manager : MonoBehaviour
        
         if (Input.GetKeyDown(KeyCode.F)&&shadowExist==false&&shadowCancel==false&&shadowCDCounter==shadowCDLength&&heroRB.velocity.y==0)
         {
+            hero_script.enabled = false;
             heroRB.bodyType = RigidbodyType2D.Static;
             heroCollider.enabled = false;
-            
+          
             shadowClone =Instantiate(shadow_prefab, mainHero.transform.position, mainHero.transform.rotation);
             
-            hero_script.enabled = false;
+          
             shadowExist = true;
             
         }
