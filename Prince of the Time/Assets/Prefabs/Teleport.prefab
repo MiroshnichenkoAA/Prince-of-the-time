@@ -4847,7 +4847,7 @@ GameObject:
   - component: {fileID: 7890780427270658201}
   - component: {fileID: 7890780427270658202}
   m_Layer: 0
-  m_Name: Teleport A
+  m_Name: Teleport
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
