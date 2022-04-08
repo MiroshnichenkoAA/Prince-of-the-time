@@ -6,136 +6,167 @@ public class Shadow_Hero : MonoBehaviour
 {
 
 
-    [SerializeField] private float speed = 3f;
-    [SerializeField] private float jumpForce = 15f;
-    
-
-    [SerializeField] public Hero hero_script;
-    [SerializeField] public Shadow_Manager shadow_Manager;
-
-
-
-    private Rigidbody2D rb;
-    private SpriteRenderer sprite;
-    private Animator anim;
-
-    public Vector3 respawnPoint;
+   
   
 
-    //Health
-    public int maxHealth;
-    public int currentHealth;
-    public HealthBar healthBar;
-    public int damageTurret;
+    [SerializeField] private float speed = 3f;
+    [SerializeField] private float jumpForce = 15f;
 
-    //Tile jump time
-    public float handTime = 2;
-    public float handCounter;
+    [SerializeField] public Turret turret;
+    public float jumpTime;
+    public float jumpTimeCounter;
+    private bool isJumping;
 
-    //Jump Buffer
-    public float jumpBufferLength;
-    public float jumpBufferCount;
+    private bool _isGrounded;
+    public Transform feetPos;
+    public float checkRadius;
+    public LayerMask whatIsGround;
 
-    private StatesA State
+    //Links to component
+    private Rigidbody2D _rb;
+    private SpriteRenderer _sprite;
+    private Animator _anim;
+
+    public Vector3 respawnPoint;
+    public GameObject fallDetector;
+
+  
+
+   
+
+
+    public StatesS State
     {
-        get { return (StatesA)anim.GetInteger("state"); }
-        set { anim.SetInteger("state", (int)value); }
+        get { return (StatesS)_anim.GetInteger("state"); }
+        set { _anim.SetInteger("state", (int)value); }
     }
 
     private void Awake()
     {
-        rb = GetComponent<Rigidbody2D>();
-        sprite = GetComponentInChildren<SpriteRenderer>();
-        anim = GetComponentInChildren<Animator>();
+        _rb = GetComponent<Rigidbody2D>();
+        _sprite = GetComponentInChildren<SpriteRenderer>();
+        _anim = GetComponentInChildren<Animator>();
 
     }
 
     private void Start()
     {
         respawnPoint = transform.position;
-        currentHealth = maxHealth;
-        
+       
 
     }
+    private void FixedUpdate()
+    {
+        MovementLogic();
 
-    
+        FallDetectorChasingThePlayer();
+        
+    }
 
     private void Update()
     {
+        IsGroundedCheck();
 
-
-        if (rb.velocity.y == 0)
-            State = StatesA.idle;
-
-
-        if (rb.velocity.y == 0)
-        {
-            handCounter = handTime;
-        }
-        else
-        {
-            handCounter -= Time.deltaTime;
-        }
-
-        if (Input.GetButton("Horizontal"))
-        
-            Run();
-
-           
+        JumpLogic();
 
 
         
 
 
 
-        if (Input.GetButtonDown("Jump"))
+
+
+
+
+
+
+
+
+
+
+
+    }
+
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "FallDetector")
         {
-            jumpBufferCount = jumpBufferLength;
+            transform.position = respawnPoint;
+     
         }
-        else
-        {
-            jumpBufferCount -= Time.deltaTime;
-        }
-
-
-        if (handCounter > 0.0f && jumpBufferCount >= 0)
-            Jump();
-        if (rb.velocity.y > 0 && Input.GetButtonUp("Jump"))
-            SmallJump();
-
-
         
-
-
     }
 
 
 
-    private void Run()
+
+
+
+    private void MovementLogic()
     {
-        if (rb.velocity.y == 0) State = StatesA.run;
-        Vector3 dir = transform.right * Input.GetAxis("Horizontal");
 
-        transform.position = Vector3.MoveTowards(transform.position, transform.position + dir, speed * Time.deltaTime);
+        float moveInput = Input.GetAxis("Horizontal");
+        _rb.velocity = new Vector2(moveInput * speed, _rb.velocity.y);
+        _sprite.flipX = moveInput < 0.0f;
 
-        sprite.flipX = dir.x < 0.0f;
+        if ((moveInput != 0) && _isGrounded) State = StatesS.run;
+        if ((moveInput == 0) && _isGrounded) State = StatesS.idle;
     }
 
-    private void Jump()
+    private void JumpLogic()
     {
-        State = StatesA.jump;
-        rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
-        jumpBufferCount = 0;
-    }
-    private void SmallJump()
-    {
-        State = StatesA.jump;
-        rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.25f);
+        if (_isGrounded && Input.GetButtonDown("Jump"))
+        {
+            isJumping = true;
+            jumpTimeCounter = jumpTime;
+            _rb.velocity = Vector2.up * jumpForce;
+        }
+        if (Input.GetButton("Jump") && isJumping)
+        {
+            if (jumpTimeCounter > 0)
+            {
+                _rb.velocity = Vector2.up * jumpForce;
+                jumpTimeCounter -= Time.deltaTime;
+
+            }
+            else
+                isJumping = false;
+        }
+
+        if (Input.GetButtonUp("Jump"))
+        {
+            isJumping = false;
+        }
+
+        if (isJumping) State = StatesS.jump;
     }
 
+
+    private void IsGroundedCheck()
+    {
+        _isGrounded = Physics2D.OverlapCircle(feetPos.position, checkRadius, whatIsGround);
+    }
+
+    private void FallDetectorChasingThePlayer()
+    {
+        if (_isGrounded)
+            fallDetector.transform.position = new Vector3(transform.position.x, transform.position.y - 10, 0);
+    }
+
+ 
+
+
+
+
+
+
+
+  
 }
 
-public enum Statesa
+public enum StatesS
+
 {
     idle,
     run,

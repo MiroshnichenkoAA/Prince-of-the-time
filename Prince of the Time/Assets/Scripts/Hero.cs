@@ -4,17 +4,25 @@ using UnityEngine;
 
 public class Hero : MonoBehaviour
 {
-    [SerializeField] private float slowTime = 1f;
-    [SerializeField] private float slowTimeCounter = 1f;
+  
 
     [SerializeField] private float speed = 3f;
     [SerializeField] private float jumpForce = 15f;
+
     [SerializeField] public Turret turret;
+    public float jumpTime;
+    public float jumpTimeCounter;
+    private bool isJumping;
+
+    public bool _isGrounded;
+    public Transform feetPos;
+    public float checkRadius;
+    public LayerMask whatIsGround;
 
     //Links to component
-    private Rigidbody2D rb;
-    private SpriteRenderer sprite;
-    private Animator anim;
+    private Rigidbody2D _rb;
+    private SpriteRenderer _sprite;
+    private Animator _anim;
 
     public Vector3 respawnPoint;
     public GameObject fallDetector;
@@ -28,25 +36,18 @@ public class Hero : MonoBehaviour
     public HealthBar healthBar;
     
 
-    //Tile jump time
-    public float handTime=2;
-    public float handCounter;
-
-    //Jump Buffer
-    public float jumpBufferLength;
-    public float jumpBufferCount;
 
     public StatesA State
     {
-        get { return (StatesA)anim.GetInteger("state"); }
-        set { anim.SetInteger("state",(int)value); }
+        get { return (StatesA)_anim.GetInteger("state"); }
+        set { _anim.SetInteger("state",(int)value); }
     }
 
     private void Awake()
     {
-        rb = GetComponent<Rigidbody2D>();
-        sprite = GetComponentInChildren<SpriteRenderer>();
-        anim = GetComponentInChildren<Animator>();
+        _rb = GetComponent<Rigidbody2D>();
+        _sprite = GetComponentInChildren<SpriteRenderer>();
+        _anim = GetComponentInChildren<Animator>();
         
     }
 
@@ -54,19 +55,25 @@ public class Hero : MonoBehaviour
     {
         respawnPoint = transform.position;
         currentHealth= maxHealth;
-        slowTimeCounter = slowTime;
         healthBar.SetMaxHealth(maxHealth);
 
     }
-    
+    private void FixedUpdate()
+    {
+        MovementLogic();
+        
+        FallDetectorChasingThePlayer();
+        DieCheck();
+    }
+
     private void Update()
     {
-        
-        if (rb.velocity.y == 0)
-       State = StatesA.idle;
+        IsGroundedCheck();
+
+        JumpLogic();
 
 
-        if (sprite.flipX == true) {
+        if (_sprite.flipX == true) {
             lightInHandLeft.SetActive(true);
             lightInHandRight.SetActive(false);
         }
@@ -74,52 +81,6 @@ public class Hero : MonoBehaviour
             lightInHandLeft.SetActive(false);
             lightInHandRight.SetActive(true);
                 }
-
-
-        if (rb.velocity.y == 0)
-        {
-            handCounter = handTime;
-        }
-        else
-        {
-            handCounter-=Time.deltaTime;
-        }
-
-
-        if (Input.GetButtonDown("Jump"))
-        {
-            jumpBufferCount = jumpBufferLength;
-        }
-        else
-        {
-            jumpBufferCount -=Time.deltaTime;
-        }
-
-
-            if (handCounter>0.0f && jumpBufferCount>=0)
-                Jump();
-        if (rb.velocity.y > 0 && Input.GetButtonUp("Jump"))
-            SmallJump();
-
-        if (Input.GetButton("Horizontal"))
-      
-            Run();
-
-
-
-            if (rb.velocity.y==0)
-            fallDetector.transform.position = new Vector3(transform.position.x, transform.position.y-10,0);
-
-            if (currentHealth <= 0)
-            {
-                transform.position = respawnPoint;
-                currentHealth = maxHealth;
-                healthBar.SetMaxHealth(maxHealth);
-
-            }
-           
-
-        
     }
   
 
@@ -134,7 +95,7 @@ public class Hero : MonoBehaviour
         if (collision.tag=="Bullet")
         {
             TakeDamageTurret();
-            SlowTheGame();
+            
         }
     }
     
@@ -142,41 +103,77 @@ public class Hero : MonoBehaviour
 
 
 
-    private void Run()
-    {   if (rb.velocity.y == 0) State = StatesA.run;
-        Vector3 dir = transform.right * Input.GetAxis("Horizontal");
-
-        transform.position = Vector3.MoveTowards(transform.position, transform.position + dir, speed * Time.deltaTime);
-
-        sprite.flipX = dir.x < 0.0f;
-    }
-
-    private void Jump()
+    
+    private void MovementLogic()
     {
-        State = StatesA.jump;
-        rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
-        jumpBufferCount = 0;
+        
+        float moveInput = Input.GetAxis("Horizontal");
+       _rb.velocity = new Vector2(moveInput * speed,_rb.velocity.y);
+        _sprite.flipX = moveInput < 0.0f;
+      
+        if ((moveInput != 0) && _isGrounded) State = StatesA.run;
+        if ((moveInput == 0) && _isGrounded) State = StatesA.idle;
     }
 
-    private void SmallJump()
+    private void JumpLogic()
     {
-        State = StatesA.jump;
-        rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.25f) ;
-    }
-
-    public void SlowTheGame()
-    {  if(slowTimeCounter<=0)
-        Time.timeScale = 0.5f;
-    else
+        if (_isGrounded && Input.GetButtonDown("Jump"))
         {
-            Time.timeScale = 1f;
-            slowTimeCounter -= Time.deltaTime;
+            isJumping = true;
+            jumpTimeCounter = jumpTime;
+            _rb.velocity = Vector2.up * jumpForce;
+        }
+        if (Input.GetButton("Jump")&&isJumping)
+        {
+            if (jumpTimeCounter > 0)
+            {
+                _rb.velocity = Vector2.up * jumpForce;
+                jumpTimeCounter -= Time.deltaTime;
+
+            }
+            else
+                isJumping = false;
         }
 
+        if (Input.GetButtonUp("Jump"))
+        {
+            isJumping = false;
+        }
+
+        if (isJumping) State = StatesA.jump;
+    }
+
+    
+    private void IsGroundedCheck()
+    {
+        _isGrounded = Physics2D.OverlapCircle(feetPos.position, checkRadius, whatIsGround);
+    }
+   
+    private void FallDetectorChasingThePlayer() 
+    {
+        if(_isGrounded)
+        fallDetector.transform.position = new Vector3(transform.position.x, transform.position.y - 10, 0);
+    }
+
+    private void DieCheck()
+    {
+        if (currentHealth <= 0)
+        {
+            transform.position = respawnPoint;
+            currentHealth = maxHealth;
+            healthBar.SetMaxHealth(maxHealth);
+
+        }
 
     }
 
-    public void TakeDamageTurret()
+
+
+
+
+
+
+    private void TakeDamageTurret()
     {
         currentHealth -= turret.damageTurret;
         healthBar.SetHealth(currentHealth);

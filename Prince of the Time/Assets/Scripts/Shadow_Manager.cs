@@ -22,7 +22,10 @@ public class Shadow_Manager : MonoBehaviour
     [SerializeField] private float shadowCDCounter;
     [SerializeField] public Shadow_Timer shadowTimer;
     [SerializeField] public CD_Shadow shadowCDTimer;
-  
+   
+
+
+
     public bool shadowExist=false;
     public bool shadowCancel = false;
     [SerializeField] public Rigidbody2D heroRB;
@@ -56,13 +59,14 @@ public class Shadow_Manager : MonoBehaviour
 
         }else shadowCancel = false; 
        
-        if (Input.GetKeyDown(KeyCode.F)&&shadowExist==false&&shadowCancel==false&&shadowCDCounter==shadowCDLength&&heroRB.velocity.y==0)
+        if (Input.GetKeyDown(KeyCode.F)&&shadowExist==false&&shadowCancel==false&&shadowCDCounter==shadowCDLength&&hero_script._isGrounded)
         {
+            hero_script.State = StatesA.idle;
             hero_script.enabled = false;
             heroRB.bodyType = RigidbodyType2D.Static;
             heroCollider.enabled = false;
-          
-            shadowClone =Instantiate(shadow_prefab, mainHero.transform.position, mainHero.transform.rotation);
+
+            shadowClone = Instantiate(shadow_prefab, mainHero.transform.position, mainHero.transform.rotation) ;
             
           
             shadowExist = true;

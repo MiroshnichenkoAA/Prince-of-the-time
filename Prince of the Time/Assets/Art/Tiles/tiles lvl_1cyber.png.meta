@@ -1,0 +1,1056 @@
+fileFormatVersion: 2
+guid: 95da3571a5438c64f9ffcfe30d396c19
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5727152652483141975
+    second: tiles lvl_1cyber_0
+  - first:
+      213: 4914710437157520525
+    second: tiles lvl_1cyber_1
+  - first:
+      213: -263657000717761174
+    second: tiles lvl_1cyber_2
+  - first:
+      213: 143872010215569148
+    second: tiles lvl_1cyber_3
+  - first:
+      213: 216963360179490689
+    second: tiles lvl_1cyber_4
+  - first:
+      213: 2828536867353973086
+    second: tiles lvl_1cyber_5
+  - first:
+      213: 6633690052477427070
+    second: tiles lvl_1cyber_6
+  - first:
+      213: -5768214085860614098
+    second: tiles lvl_1cyber_7
+  - first:
+      213: -4299359349960544437
+    second: tiles lvl_1cyber_8
+  - first:
+      213: 7717580443405314816
+    second: tiles lvl_1cyber_9
+  - first:
+      213: -608097841173079826
+    second: tiles lvl_1cyber_10
+  - first:
+      213: 6824334932758121564
+    second: tiles lvl_1cyber_11
+  - first:
+      213: 4790278523144972591
+    second: tiles lvl_1cyber_12
+  - first:
+      213: -449055623131364903
+    second: tiles lvl_1cyber_13
+  - first:
+      213: -4810725379835137374
+    second: tiles lvl_1cyber_14
+  - first:
+      213: -1286360724360617868
+    second: tiles lvl_1cyber_15
+  - first:
+      213: 571548431800066608
+    second: tiles lvl_1cyber_16
+  - first:
+      213: 6760031730163702741
+    second: tiles lvl_1cyber_17
+  - first:
+      213: -4535796977656265096
+    second: tiles lvl_1cyber_18
+  - first:
+      213: 3714579692918721275
+    second: tiles lvl_1cyber_19
+  - first:
+      213: 1423351049062424340
+    second: tiles lvl_1cyber_20
+  - first:
+      213: 237398583719254585
+    second: tiles lvl_1cyber_21
+  - first:
+      213: 4281455480342123348
+    second: tiles lvl_1cyber_22
+  - first:
+      213: 3061863624096652401
+    second: tiles lvl_1cyber_23
+  - first:
+      213: 7223178643591271283
+    second: tiles lvl_1cyber_24
+  - first:
+      213: -4522244249003588502
+    second: tiles lvl_1cyber_25
+  - first:
+      213: -8683680440566900727
+    second: tiles lvl_1cyber_26
+  - first:
+      213: 8701024325740413641
+    second: tiles lvl_1cyber_27
+  - first:
+      213: -6511080256787032627
+    second: tiles lvl_1cyber_28
+  - first:
+      213: 6061293715470936090
+    second: tiles lvl_1cyber_29
+  - first:
+      213: 1211389714224103351
+    second: tiles lvl_1cyber_30
+  - first:
+      213: 983075060689100570
+    second: tiles lvl_1cyber_31
+  - first:
+      213: -24488002525917828
+    second: tiles lvl_1cyber_32
+  - first:
+      213: -3903502889785464981
+    second: tiles lvl_1cyber_33
+  - first:
+      213: -2115657782096847545
+    second: tiles lvl_1cyber_34
+  - first:
+      213: -7169496180837124195
+    second: tiles lvl_1cyber_35
+  - first:
+      213: -6633575339466633037
+    second: tiles lvl_1cyber_36
+  - first:
+      213: 1179950703224818000
+    second: tiles lvl_1cyber_37
+  - first:
+      213: -8738668226794651704
+    second: tiles lvl_1cyber_38
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 30
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: tiles lvl_1cyber_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 270
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 751a1b16efeea7f40800000000000000
+      internalID: 5727152652483141975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles lvl_1cyber_1
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 270
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d84cda47a1f843440800000000000000
+      internalID: 4914710437157520525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles lvl_1cyber_2
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 270
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a654ca1da5d475cf0800000000000000
+      internalID: -263657000717761174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles lvl_1cyber_3
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 270
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf6350eb4d22ff100800000000000000
+      internalID: 143872010215569148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles lvl_1cyber_4
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 270
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18f06ccc60fc20300800000000000000
+      internalID: 216963360179490689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles lvl_1cyber_5
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 270
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e51dabc6b4bf04720800000000000000
+      internalID: 2828536867353973086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles lvl_1cyber_6
+      rect:
+        serializedVersion: 2
+        x: 187
+        y: 270
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7d95f7b4f99f0c50800000000000000
+      internalID: 6633690052477427070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles lvl_1cyber_7
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 270
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e20afd7a9df23ffa0800000000000000
+      internalID: -5768214085860614098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles lvl_1cyber_8
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 270
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4fe8df337b9554c0800000000000000
+      internalID: -4299359349960544437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles lvl_1cyber_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 239
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00beca6168a5a1b60800000000000000
+      internalID: 7717580443405314816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles lvl_1cyber_10
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 239
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee8523c3c3a9f87f0800000000000000
+      internalID: -608097841173079826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles lvl_1cyber_11
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 239
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5c4657e678e4be50800000000000000
+      internalID: 6824334932758121564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles lvl_1cyber_12
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 239
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f292d33dfec7a7240800000000000000
+      internalID: 4790278523144972591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles lvl_1cyber_13
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 239
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d10dda3a42a4c9f0800000000000000
+      internalID: -449055623131364903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles lvl_1cyber_14
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 264
+        width: 30
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a278fe51cedc3db0800000000000000
+      internalID: -4810725379835137374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles lvl_1cyber_15
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 239
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 470a8739cbde52ee0800000000000000
+      internalID: -1286360724360617868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles lvl_1cyber_16
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 239
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 032ef51454c8ee700800000000000000
+      internalID: 571548431800066608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles lvl_1cyber_17
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 208
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5dbd6cada0570dd50800000000000000
+      internalID: 6760031730163702741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles lvl_1cyber_18
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 208
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87602853eac9d01c0800000000000000
+      internalID: -4535796977656265096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles lvl_1cyber_19
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 208
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfacc4ecc86dc8330800000000000000
+      internalID: 3714579692918721275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles lvl_1cyber_20
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 208
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41f9b06ec32c0c310800000000000000
+      internalID: 1423351049062424340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles lvl_1cyber_21
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 208
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93a54cc01c86b4300800000000000000
+      internalID: 237398583719254585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles lvl_1cyber_22
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 147
+        width: 60
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45311734319ca6b30800000000000000
+      internalID: 4281455480342123348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles lvl_1cyber_23
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 177
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17c98f06ebced7a20800000000000000
+      internalID: 3061863624096652401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles lvl_1cyber_24
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 177
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3731270d4b2ed3460800000000000000
+      internalID: 7223178643591271283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles lvl_1cyber_25
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 146
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a64869eb0d2cd31c0800000000000000
+      internalID: -4522244249003588502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles lvl_1cyber_26
+      rect:
+        serializedVersion: 2
+        x: 187
+        y: 146
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 908900db5ae5d7780800000000000000
+      internalID: -8683680440566900727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles lvl_1cyber_27
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 146
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c24ac5368f30c870800000000000000
+      internalID: 8701024325740413641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles lvl_1cyber_28
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 146
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc5562ee00ff3a5a0800000000000000
+      internalID: -6511080256787032627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles lvl_1cyber_29
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 115
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a18e3f5258a0e1450800000000000000
+      internalID: 6061293715470936090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles lvl_1cyber_30
+      rect:
+        serializedVersion: 2
+        x: 187
+        y: 115
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7bfb3e0e688bfc010800000000000000
+      internalID: 1211389714224103351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles lvl_1cyber_31
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 115
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1f5be32f8594ad00800000000000000
+      internalID: 983075060689100570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles lvl_1cyber_32
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 115
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7d0f2c9a4009aff0800000000000000
+      internalID: -24488002525917828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles lvl_1cyber_33
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 84
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6760aaadc8f3d9c0800000000000000
+      internalID: -3903502889785464981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles lvl_1cyber_34
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 84
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74d93d7d47ca3a2e0800000000000000
+      internalID: -2115657782096847545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles lvl_1cyber_35
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 53
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d97feaa8535d08c90800000000000000
+      internalID: -7169496180837124195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles lvl_1cyber_36
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 53
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b0dc4cff5ec0f3a0800000000000000
+      internalID: -6633575339466633037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles lvl_1cyber_37
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 22
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0590036b9e6006010800000000000000
+      internalID: 1179950703224818000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles lvl_1cyber_38
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 22
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cf79e31c830ab680800000000000000
+      internalID: -8738668226794651704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
