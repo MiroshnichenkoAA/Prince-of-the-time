@@ -6,8 +6,8 @@ public class Hero : MonoBehaviour
 {
   
 
-    [SerializeField] private float speed = 3f;
-    [SerializeField] private float jumpForce = 15f;
+    [SerializeField] private float speed;
+    [SerializeField] private float jumpForce;
 
     [SerializeField] public Turret turret;
     public float jumpTime;
@@ -34,6 +34,7 @@ public class Hero : MonoBehaviour
     public int maxHealth;
     public int currentHealth;
     public HealthBar healthBar;
+  
     
 
 
@@ -121,14 +122,15 @@ public class Hero : MonoBehaviour
         {
             isJumping = true;
             jumpTimeCounter = jumpTime;
-            _rb.velocity = Vector2.up * jumpForce;
+            _rb.velocity = Vector2.up * jumpForce;  
+
         }
         if (Input.GetButton("Jump")&&isJumping)
         {
             if (jumpTimeCounter > 0)
             {
                 _rb.velocity = Vector2.up * jumpForce;
-                jumpTimeCounter -= Time.deltaTime;
+                jumpTimeCounter -= Time.deltaTime;  
 
             }
             else
