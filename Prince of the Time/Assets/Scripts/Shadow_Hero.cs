@@ -28,7 +28,7 @@ public class Shadow_Hero : MonoBehaviour
     private Animator _anim;
 
     public Vector3 respawnPoint;
-    public GameObject fallDetector;
+   
 
   
 
@@ -59,7 +59,7 @@ public class Shadow_Hero : MonoBehaviour
     {
         MovementLogic();
 
-        FallDetectorChasingThePlayer();
+       
         
     }
 
@@ -148,12 +148,7 @@ public class Shadow_Hero : MonoBehaviour
         _isGrounded = Physics2D.OverlapCircle(feetPos.position, checkRadius, whatIsGround);
     }
 
-    private void FallDetectorChasingThePlayer()
-    {
-        if (_isGrounded)
-            fallDetector.transform.position = new Vector3(transform.position.x, transform.position.y - 10, 0);
-    }
-
+   
  
 
 
