@@ -14,10 +14,18 @@ public class Enemy_Robot : MonoBehaviour
     public Transform shotPoint;
     public bool isOnRoboArea;
     public bool boundToFall;
-
+    public float checkDistance;
+    Vector3 leftPoint;
+    Vector3 rightPoint;
     private bool movingRight = true;
     public Transform groundDetection;
     public float distance;
+    [SerializeField] private Transform _feetPos;
+    [SerializeField] private LayerMask _whatIsGround;
+    [SerializeField] private bool _isGrounded;
+    [SerializeField] private float _checkRadius;
+    private AudioSource _audioSource;
+    
 
     [SerializeField] private Transform _player;
     // Start is called before the first frame update
@@ -25,20 +33,26 @@ public class Enemy_Robot : MonoBehaviour
     {
         _sprite = GetComponent<SpriteRenderer>();
         timeBtwShots = startTimeBtwShots;
+        _audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (isOnRoboArea)
+        IsNearRoboCheck();
+        GroundCheckUnderFeet();
+        if (isOnRoboArea && _isGrounded)
         {
+            NoFallWhileChasing();
             Chasing();
             Flipping();
             Shooting();
-        }
-        else
-            Patroling();
 
+        }
+        else if (_isGrounded)
+        {
+            Patroling();
+        } 
        
 
 
@@ -74,7 +88,7 @@ public class Enemy_Robot : MonoBehaviour
     {
         if (timeBtwShots <= 0)
         {
-
+            _audioSource.Play();
             Instantiate(roboBulletPrefab, shotPoint.position, shotPoint.rotation);
 
 
@@ -96,26 +110,50 @@ public class Enemy_Robot : MonoBehaviour
             if (movingRight == true)
             {
                 transform.eulerAngles = new Vector3(0, -180, 0);
+                rightPoint = transform.position;
+               
                 movingRight = false;
             }
             else
             {
                 transform.eulerAngles = new Vector3(0, 0, 0);
                 movingRight = true;
+                leftPoint = transform.position;
+              
             }
         }
        
 
     }
-    void OnTriggerStay2D(Collider2D collision)
+
+    private void IsNearRoboCheck()
     {
-        if (collision.gameObject.name.Equals("Main Character"))
+        if ((Vector2.Distance(transform.position, _player.position) < checkDistance))
         {
+            
             isOnRoboArea = true;
         }
-        else isOnRoboArea = false;
+        else
+        {
+            
+            isOnRoboArea = false;
+        }
     }
-
-
+    
+    private void NoFallWhileChasing()
+    {
+        if(transform.position==rightPoint)
+        {
+            transform.position = rightPoint;
+        }
+        if (transform.position == leftPoint)
+        {
+            transform.position = leftPoint;
+        }
+    }
+    private void GroundCheckUnderFeet()
+    {
+        _isGrounded = Physics2D.OverlapCircle(_feetPos.position, _checkRadius, _whatIsGround);
+    }
 
 }
