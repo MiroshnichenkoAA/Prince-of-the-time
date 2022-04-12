@@ -35,11 +35,7 @@ public class Shadow_Hero : MonoBehaviour
    
 
 
-    public StatesS State
-    {
-        get { return (StatesS)_anim.GetInteger("state"); }
-        set { _anim.SetInteger("state", (int)value); }
-    }
+   
 
     private void Awake()
     {
@@ -108,10 +104,14 @@ public class Shadow_Hero : MonoBehaviour
 
         float moveInput = Input.GetAxis("Horizontal");
         _rb.velocity = new Vector2(moveInput * speed, _rb.velocity.y);
-        _sprite.flipX = moveInput < 0.0f;
+        if (moveInput < 0.0f)
+        {
+            transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, 180, transform.rotation.eulerAngles.z);
+        }
+        else transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, 0, transform.rotation.eulerAngles.z);
 
-        if ((moveInput != 0) && _isGrounded) State = StatesS.run;
-        if ((moveInput == 0) && _isGrounded) State = StatesS.idle;
+        if ((moveInput != 0) && _isGrounded) _anim.SetBool("isRunning", true);
+        if ((moveInput == 0) && _isGrounded) _anim.SetBool("isRunning", false);
     }
 
     private void JumpLogic()
@@ -139,7 +139,11 @@ public class Shadow_Hero : MonoBehaviour
             isJumping = false;
         }
 
-        if (isJumping) State = StatesS.jump;
+        if (_isGrounded)
+        {
+            _anim.SetBool("isJumping", false);
+        }
+        else _anim.SetBool("isJumping", true);
     }
 
 
@@ -160,12 +164,3 @@ public class Shadow_Hero : MonoBehaviour
   
 }
 
-public enum StatesS
-
-{
-    idle,
-    run,
-    jump,
-    dash,
-    wallslide
-}

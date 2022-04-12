@@ -34,15 +34,15 @@ public class Hero : MonoBehaviour
     public int maxHealth;
     public int currentHealth;
     public HealthBar healthBar;
-  
-    
+
+    //Laser
+    public LineRenderer lineRenderer;
+    public Transform firePoint;
+    public Transform maxShotDistance;
+    public GameObject laserParticle;
+    public GameObject laserParticleEnd;
 
 
-    public StatesA State
-    {
-        get { return (StatesA)_anim.GetInteger("state"); }
-        set { _anim.SetInteger("state",(int)value); }
-    }
 
     private void Awake()
     {
@@ -57,12 +57,12 @@ public class Hero : MonoBehaviour
         respawnPoint = transform.position;
         currentHealth= maxHealth;
         healthBar.SetMaxHealth(maxHealth);
+        DisableLaser();
 
     }
     private void FixedUpdate()
     {
         MovementLogic();
-        
         FallDetectorChasingThePlayer();
         DieCheck();
     }
@@ -74,16 +74,63 @@ public class Hero : MonoBehaviour
         JumpLogic();
 
 
-        if (_sprite.flipX == true) {
-            lightInHandLeft.SetActive(true);
-            lightInHandRight.SetActive(false);
+
+
+
+
+
+        if (Input.GetKeyDown(KeyCode.V))
+        {
+            _anim.SetTrigger("startAttack");
+            EnableLaser();
+            
         }
-        else {
-            lightInHandLeft.SetActive(false);
-            lightInHandRight.SetActive(true);
-                }
+
+        if (Input.GetKey(KeyCode.V))
+        {
+            _anim.SetBool("isAttacking", true);
+            UpdateLaser();
+            
+
+        }
+
+        if (Input.GetKeyUp(KeyCode.V))
+        {
+            DisableLaser();
+            _anim.SetBool("isAttacking", false);
+
+        }
+
+
+
+
     }
-  
+    private void EnableLaser()
+    {
+        lineRenderer.enabled = true;
+    }
+    private void UpdateLaser()
+    {
+        laserParticle.SetActive(true);
+        laserParticleEnd.SetActive(true);
+        laserParticleEnd.transform.position = lineRenderer.GetPosition(1);
+
+        lineRenderer.SetPosition(0, firePoint.position);
+        lineRenderer.SetPosition(1, maxShotDistance.position);
+        Vector2 direction = maxShotDistance.position - firePoint.position;
+
+         RaycastHit2D hit = Physics2D.Raycast(firePoint.position, direction.normalized, direction.magnitude );
+         if (hit)
+         {
+             lineRenderer.SetPosition(1, hit.point);
+         }
+    }
+    private void DisableLaser()
+    {
+        lineRenderer.enabled = false;
+        laserParticleEnd.SetActive(false);
+        laserParticle.SetActive(false);
+    }
 
     void OnTriggerEnter2D(Collider2D collision)
     {
@@ -110,10 +157,14 @@ public class Hero : MonoBehaviour
         
         float moveInput = Input.GetAxis("Horizontal");
        _rb.velocity = new Vector2(moveInput * speed,_rb.velocity.y);
-        _sprite.flipX = moveInput < 0.0f;
+        if(moveInput < 0.0f)
+        {
+            transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, 180, transform.rotation.eulerAngles.z);
+        } else transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, 0, transform.rotation.eulerAngles.z);
+        //_sprite.flipX = moveInput < 0.0f;
       
-        if ((moveInput != 0) && _isGrounded) State = StatesA.run;
-        if ((moveInput == 0) && _isGrounded) State = StatesA.idle;
+        if ((moveInput != 0) && _isGrounded) _anim.SetBool("isRunning", true);
+        if ((moveInput == 0) && _isGrounded)  _anim.SetBool("isRunning", false);
     }
 
     private void JumpLogic()
@@ -142,7 +193,10 @@ public class Hero : MonoBehaviour
             isJumping = false;
         }
 
-        if (isJumping) State = StatesA.jump;
+        if (_isGrounded)
+        {
+            _anim.SetBool("isJumping", false);
+        } else _anim.SetBool("isJumping",true);
     }
 
     
@@ -169,7 +223,7 @@ public class Hero : MonoBehaviour
 
     }
 
-
+    
 
 
 
@@ -183,11 +237,3 @@ public class Hero : MonoBehaviour
     }
 }
 
-public enum StatesA
-{
-    idle,
-    run,
-    jump,
-    dash,
-    wallslide
-}

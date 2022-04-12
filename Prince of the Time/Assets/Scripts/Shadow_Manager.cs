@@ -61,7 +61,7 @@ public class Shadow_Manager : MonoBehaviour
        
         if (Input.GetKeyDown(KeyCode.F)&&shadowExist==false&&shadowCancel==false&&shadowCDCounter==shadowCDLength&&hero_script._isGrounded)
         {
-            hero_script.State = StatesA.idle;
+            //hero_script.State = StatesA.idle;
             hero_script.enabled = false;
             heroRB.bodyType = RigidbodyType2D.Static;
             heroCollider.enabled = false;
