@@ -22,7 +22,7 @@ public class Hero : MonoBehaviour
     //Links to component
     private Rigidbody2D _rb;
     private SpriteRenderer _sprite;
-    private Animator _anim;
+    public Animator _anim;
 
     public Vector3 respawnPoint;
     public GameObject fallDetector;
