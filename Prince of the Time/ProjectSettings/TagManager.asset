@@ -21,7 +21,7 @@ TagManager:
   - post
   - Wall
   - Sky
-  - 
+  - Laser
   - 
   - 
   - 
@@ -59,4 +59,7 @@ TagManager:
     locked: 0
   - name: Background
     uniqueID: 3068212393
+    locked: 0
+  - name: VFX
+    uniqueID: 667619251
     locked: 0
