@@ -31,7 +31,8 @@ public class Shadow_Manager : MonoBehaviour
     [SerializeField] public Rigidbody2D heroRB;
     [SerializeField] public RigidbodyConstraints rigidbodyConstraints;
     [SerializeField] public BoxCollider2D heroCollider;
-    
+   
+
     void Start()
     {
         shadowCDCounter = shadowCDLength;
@@ -49,7 +50,7 @@ public class Shadow_Manager : MonoBehaviour
             hero_script.enabled = true;
             heroRB.bodyType = RigidbodyType2D.Dynamic;
 
-            heroCollider.enabled = true;
+        
             mainHero.transform.position = shadowClone.transform.position;
             shadowExist = false;
             shadowCounter = shadowLength;
@@ -63,8 +64,9 @@ public class Shadow_Manager : MonoBehaviour
         {
             hero_script._anim.SetBool("isRunning", false);
             hero_script.enabled = false;
+            Physics2D.IgnoreLayerCollision(7, 13);
             heroRB.bodyType = RigidbodyType2D.Static;
-            heroCollider.enabled = false;
+        
 
             shadowClone = Instantiate(shadow_prefab, mainHero.transform.position, mainHero.transform.rotation) ;
             

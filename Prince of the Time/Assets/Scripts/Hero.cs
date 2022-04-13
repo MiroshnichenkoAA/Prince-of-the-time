@@ -41,7 +41,7 @@ public class Hero : MonoBehaviour
     public Transform maxShotDistance;
     public GameObject laserParticle;
     public GameObject laserParticleEnd;
-
+    public bool isShooting;
 
 
     private void Awake()
@@ -65,6 +65,7 @@ public class Hero : MonoBehaviour
         MovementLogic();
         FallDetectorChasingThePlayer();
         DieCheck();
+      
     }
 
     private void Update()
@@ -72,30 +73,37 @@ public class Hero : MonoBehaviour
         IsGroundedCheck();
 
         JumpLogic();
+        Debug.Log(isShooting);
 
-
-
-
-
-
-
-        if (Input.GetKeyDown(KeyCode.V))
+        if (Input.GetKeyDown(KeyCode.V) && _isGrounded&&!isShooting)
         {
             _anim.SetTrigger("startAttack");
             EnableLaser();
-            
-        }
 
-        if (Input.GetKey(KeyCode.V))
+        }
+        if (Input.GetKey(KeyCode.V) && _isGrounded)
         {
+            
+            _rb.bodyType = RigidbodyType2D.Static;
             _anim.SetBool("isAttacking", true);
             UpdateLaser();
-            
+            isShooting = true;
 
         }
+       
+
+      
+     
+
+
+
+
 
         if (Input.GetKeyUp(KeyCode.V))
         {
+            isShooting = false;
+            
+            _rb.bodyType = RigidbodyType2D.Dynamic;
             DisableLaser();
             _anim.SetBool("isAttacking", false);
 
@@ -111,24 +119,29 @@ public class Hero : MonoBehaviour
     }
     private void UpdateLaser()
     {
-        laserParticle.SetActive(true);
-        laserParticleEnd.SetActive(true);
-        laserParticleEnd.transform.position = lineRenderer.GetPosition(1);
-
+        
         lineRenderer.SetPosition(0, firePoint.position);
         lineRenderer.SetPosition(1, maxShotDistance.position);
+        laserParticle.SetActive(true);
+        laserParticleEnd.SetActive(true);
+        laserParticle.transform.position = lineRenderer.GetPosition(0);
+     
+
+        
         Vector2 direction = maxShotDistance.position - firePoint.position;
 
          RaycastHit2D hit = Physics2D.Raycast(firePoint.position, direction.normalized, direction.magnitude );
          if (hit)
          {
              lineRenderer.SetPosition(1, hit.point);
+            
          }
+        laserParticleEnd.transform.position = lineRenderer.GetPosition(1);
     }
     private void DisableLaser()
     {
         lineRenderer.enabled = false;
-        laserParticleEnd.SetActive(false);
+       laserParticleEnd.SetActive(false);
         laserParticle.SetActive(false);
     }
 
@@ -156,8 +169,9 @@ public class Hero : MonoBehaviour
     {
         
         float moveInput = Input.GetAxis("Horizontal");
+        if(isShooting == false)
        _rb.velocity = new Vector2(moveInput * speed,_rb.velocity.y);
-        if(moveInput < 0.0f)
+        if(moveInput < 0.0f &&isShooting==false)
         {
             transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, 180, transform.rotation.eulerAngles.z);
         } else transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, 0, transform.rotation.eulerAngles.z);
@@ -169,7 +183,7 @@ public class Hero : MonoBehaviour
 
     private void JumpLogic()
     {
-        if (_isGrounded && Input.GetButtonDown("Jump"))
+        if (_isGrounded && Input.GetButtonDown("Jump")&& isShooting == false)
         {
             isJumping = true;
             jumpTimeCounter = jumpTime;
@@ -223,6 +237,8 @@ public class Hero : MonoBehaviour
 
     }
 
+   
+
     
 
 
@@ -230,7 +246,7 @@ public class Hero : MonoBehaviour
 
 
     private void TakeDamageTurret()
-    {
+    {     
         currentHealth -= turret.damageTurret;
         healthBar.SetHealth(currentHealth);
         

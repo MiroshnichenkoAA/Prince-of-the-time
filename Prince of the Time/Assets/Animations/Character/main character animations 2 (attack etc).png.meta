@@ -138,10 +138,10 @@ TextureImporter:
         serializedVersion: 2
         x: 1
         y: 268
-        width: 39
+        width: 41
         height: 31
       alignment: 9
-      pivot: {x: 0.6782208, y: 0.49532884}
+      pivot: {x: 0.6433622, y: 0.47052}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -159,10 +159,10 @@ TextureImporter:
         serializedVersion: 2
         x: 42
         y: 268
-        width: 39
+        width: 41
         height: 31
       alignment: 9
-      pivot: {x: 0.6804522, y: 0.48581228}
+      pivot: {x: 0.6433622, y: 0.47052}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -178,12 +178,12 @@ TextureImporter:
       name: main character animations 2 (attack etc)_2
       rect:
         serializedVersion: 2
-        x: 83
+        x: 84
         y: 268
-        width: 38
-        height: 30
+        width: 39
+        height: 31
       alignment: 9
-      pivot: {x: 0.6720577, y: 0.514152}
+      pivot: {x: 0.6433622, y: 0.47052}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -201,10 +201,10 @@ TextureImporter:
         serializedVersion: 2
         x: 124
         y: 267
-        width: 39
-        height: 30
+        width: 41
+        height: 31
       alignment: 9
-      pivot: {x: 0.6776585, y: 0.5146169}
+      pivot: {x: 0.6433622, y: 0.47052}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -220,12 +220,12 @@ TextureImporter:
       name: main character animations 2 (attack etc)_4
       rect:
         serializedVersion: 2
-        x: 165
+        x: 164
         y: 268
-        width: 37
-        height: 29
+        width: 41
+        height: 31
       alignment: 9
-      pivot: {x: 0.68838173, y: 0.4964084}
+      pivot: {x: 0.6433622, y: 0.47052}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -244,9 +244,9 @@ TextureImporter:
         x: 205
         y: 268
         width: 41
-        height: 29
+        height: 31
       alignment: 9
-      pivot: {x: 0.6947483, y: 0.50529534}
+      pivot: {x: 0.6433622, y: 0.47052}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -262,12 +262,12 @@ TextureImporter:
       name: main character animations 2 (attack etc)_6
       rect:
         serializedVersion: 2
-        x: 248
-        y: 268
+        x: 249
+        y: 267
         width: 41
-        height: 29
+        height: 31
       alignment: 9
-      pivot: {x: 0.6949262, y: 0.5}
+      pivot: {x: 0.6433622, y: 0.47052}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -286,9 +286,9 @@ TextureImporter:
         x: 1
         y: 236
         width: 41
-        height: 29
+        height: 31
       alignment: 9
-      pivot: {x: 0.6960899, y: 0.50000054}
+      pivot: {x: 0.6433622, y: 0.47052}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -307,9 +307,9 @@ TextureImporter:
         x: 47
         y: 236
         width: 41
-        height: 29
+        height: 31
       alignment: 9
-      pivot: {x: 0.69112545, y: 0.5035095}
+      pivot: {x: 0.6433622, y: 0.47052}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -328,9 +328,9 @@ TextureImporter:
         x: 91
         y: 236
         width: 41
-        height: 29
+        height: 31
       alignment: 9
-      pivot: {x: 0.69276315, y: 0.4965931}
+      pivot: {x: 0.6433622, y: 0.47052}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
