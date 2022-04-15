@@ -2,14 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy_Robot : MonoBehaviour
+public class Enemy_Robot : MonoBehaviour, ITakeDamage
 {
     [SerializeField] private float _speed;
     [SerializeField] private float _stoppingDistance;
     [SerializeField] private float _retrearDistance;
-    private SpriteRenderer _sprite;
+  
     private float timeBtwShots;
     public float startTimeBtwShots;
+    public float maxHealth; 
+    public float currentHealth;
     public GameObject roboBulletPrefab;
     public Transform shotPoint;
     public bool isOnRoboArea;
@@ -25,15 +27,17 @@ public class Enemy_Robot : MonoBehaviour
     [SerializeField] private bool _isGrounded;
     [SerializeField] private float _checkRadius;
     private AudioSource _audioSource;
-    
+    public LineRenderer lineRender;
+    [SerializeField] private float damageSpeed;
 
     [SerializeField] private Transform _player;
     // Start is called before the first frame update
     void Start()
     {
-        _sprite = GetComponent<SpriteRenderer>();
+       
         timeBtwShots = startTimeBtwShots;
         _audioSource = GetComponent<AudioSource>();
+        currentHealth = maxHealth;
     }
 
     // Update is called once per frame
@@ -52,10 +56,11 @@ public class Enemy_Robot : MonoBehaviour
         else if (_isGrounded)
         {
             Patroling();
-        } 
-       
+        }
 
-
+        Debug.Log(currentHealth);
+       // CheckDamage();
+        CheckHealth();
     }
 
    private void Chasing()
@@ -122,8 +127,8 @@ public class Enemy_Robot : MonoBehaviour
               
             }
         }
-       
 
+        
     }
 
     private void IsNearRoboCheck()
@@ -155,5 +160,24 @@ public class Enemy_Robot : MonoBehaviour
     {
         _isGrounded = Physics2D.OverlapCircle(_feetPos.position, _checkRadius, _whatIsGround);
     }
+   
+    public void TakeDamage(int damage)
+    { 
+         currentHealth -= damage*Time.deltaTime; 
+    }
+    
+        
 
+    
+    private void CheckHealth()
+    {
+        if (currentHealth <= 0)
+        {
+            Die();
+        }
+    }
+    private void Die()
+    {
+        Destroy(gameObject);
+    }
 }

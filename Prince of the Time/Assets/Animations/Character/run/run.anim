@@ -21,27 +21,27 @@ AnimationClip:
   - curve:
     - time: 0
       value: {fileID: -9068722096646164276, guid: 9fb8a6aadfba6b54ea6c0fb570737e4d, type: 3}
-    - time: 0.1
+    - time: 0.06666667
       value: {fileID: -301451055899139167, guid: 9fb8a6aadfba6b54ea6c0fb570737e4d, type: 3}
-    - time: 0.23333333
+    - time: 0.15
       value: {fileID: -9064766699289456912, guid: 9fb8a6aadfba6b54ea6c0fb570737e4d, type: 3}
-    - time: 0.33333334
+    - time: 0.2
       value: {fileID: -593295235092319598, guid: 9fb8a6aadfba6b54ea6c0fb570737e4d, type: 3}
-    - time: 0.45
+    - time: 0.26666668
       value: {fileID: 7604277137240088046, guid: 9fb8a6aadfba6b54ea6c0fb570737e4d, type: 3}
-    - time: 0.55
+    - time: 0.33333334
       value: {fileID: -3167495415188800251, guid: 9fb8a6aadfba6b54ea6c0fb570737e4d, type: 3}
-    - time: 0.68333334
+    - time: 0.41666666
       value: {fileID: -2182691265553383680, guid: 9fb8a6aadfba6b54ea6c0fb570737e4d, type: 3}
-    - time: 0.78333336
+    - time: 0.48333332
       value: {fileID: -2557820941346520484, guid: 9fb8a6aadfba6b54ea6c0fb570737e4d, type: 3}
-    - time: 0.9
+    - time: 0.55
       value: {fileID: -5980215428554867129, guid: 9fb8a6aadfba6b54ea6c0fb570737e4d, type: 3}
-    - time: 1
+    - time: 0.6
       value: {fileID: 6072263749905276870, guid: 9fb8a6aadfba6b54ea6c0fb570737e4d, type: 3}
-    - time: 1.1333333
+    - time: 0.68333334
       value: {fileID: -2658475383029707982, guid: 9fb8a6aadfba6b54ea6c0fb570737e4d, type: 3}
-    - time: 1.2333333
+    - time: 0.75
       value: {fileID: 7826782153174609709, guid: 9fb8a6aadfba6b54ea6c0fb570737e4d, type: 3}
     attribute: m_Sprite
     path: 
@@ -79,7 +79,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 1.25
+    m_StopTime: 0.76666665
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -98,4 +98,18 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 0.2
+    functionName: FootStep
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.68333334
+    functionName: FootStep
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0

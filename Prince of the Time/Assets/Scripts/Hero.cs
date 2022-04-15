@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Hero : MonoBehaviour
+public class Hero : MonoBehaviour,ITakeDamage
 {
-  
 
+    
     [SerializeField] private float speed;
     [SerializeField] private float jumpForce;
+    public LayerMask enemyLayer;
 
     [SerializeField] public Turret turret;
     public float jumpTime;
@@ -23,6 +24,7 @@ public class Hero : MonoBehaviour
     private Rigidbody2D _rb;
     private SpriteRenderer _sprite;
     public Animator _anim;
+    private AudioSource audioSource;
 
     public Vector3 respawnPoint;
     public GameObject fallDetector;
@@ -42,6 +44,8 @@ public class Hero : MonoBehaviour
     public GameObject laserParticle;
     public GameObject laserParticleEnd;
     public bool isShooting;
+    public RaycastHit2D hit;
+    
 
 
     private void Awake()
@@ -49,6 +53,7 @@ public class Hero : MonoBehaviour
         _rb = GetComponent<Rigidbody2D>();
         _sprite = GetComponentInChildren<SpriteRenderer>();
         _anim = GetComponentInChildren<Animator>();
+        audioSource = GetComponent<AudioSource>();
         
     }
 
@@ -71,25 +76,26 @@ public class Hero : MonoBehaviour
     private void Update()
     {
         IsGroundedCheck();
-
+        
         JumpLogic();
-        Debug.Log(isShooting);
+        
 
         if (Input.GetKeyDown(KeyCode.V) && _isGrounded&&!isShooting)
         {
             _anim.SetTrigger("startAttack");
             EnableLaser();
+            audioSource.Play();
 
         }
         if (Input.GetKey(KeyCode.V) && _isGrounded)
         {
-            
+           
             _rb.bodyType = RigidbodyType2D.Static;
             _anim.SetBool("isAttacking", true);
             UpdateLaser();
             isShooting = true;
 
-        }
+        } 
        
 
       
@@ -101,11 +107,13 @@ public class Hero : MonoBehaviour
 
         if (Input.GetKeyUp(KeyCode.V))
         {
+            audioSource.Stop();
             isShooting = false;
             
             _rb.bodyType = RigidbodyType2D.Dynamic;
             DisableLaser();
             _anim.SetBool("isAttacking", false);
+            lineRenderer.SetPosition(1, firePoint.position);
 
         }
 
@@ -158,9 +166,17 @@ public class Hero : MonoBehaviour
             TakeDamageTurret();
             
         }
+        if (collision.tag == "Laser")
+        {
+            Die();
+
+        }
     }
     
-
+    public void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+    }
 
 
 
@@ -175,7 +191,7 @@ public class Hero : MonoBehaviour
         {
             transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, 180, transform.rotation.eulerAngles.z);
         } else transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, 0, transform.rotation.eulerAngles.z);
-        //_sprite.flipX = moveInput < 0.0f;
+        
       
         if ((moveInput != 0) && _isGrounded) _anim.SetBool("isRunning", true);
         if ((moveInput == 0) && _isGrounded)  _anim.SetBool("isRunning", false);
@@ -229,12 +245,16 @@ public class Hero : MonoBehaviour
     {
         if (currentHealth <= 0)
         {
-            transform.position = respawnPoint;
-            currentHealth = maxHealth;
-            healthBar.SetMaxHealth(maxHealth);
+            Die();
 
         }
 
+    }
+    private void Die()
+    {
+        transform.position = respawnPoint;
+        currentHealth = maxHealth;
+        healthBar.SetMaxHealth(maxHealth);
     }
 
    

@@ -2,16 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Turret : MonoBehaviour
+public class Turret : MonoBehaviour, ITakeDamage
 {
-    public Transform firepoint;
+    [SerializeField] public Transform firepoint;
+    [SerializeField] public Transform directionalPoint;
     private Animator anim;
     public GameObject bullet;
     [SerializeField] public int damageTurret;
     float timebetween;
     [SerializeField] public float starttimebetween;
     bool isOnTurretArea=false;
-    
+    [SerializeField] private float _health;
     
     private AudioSource audioSource;
     
@@ -29,30 +30,17 @@ public class Turret : MonoBehaviour
 
         
     }
-    void OnTriggerStay2D(Collider2D collision)
-    {
-        if (collision.gameObject.name.Equals("Main Character"))
-        {
-             StateT = StatesT.shooting; 
-            
-            isOnTurretArea = true;
-        }
-        else
-        {
-            isOnTurretArea = false;
-            StateT = StatesT.idle;
-        }
 
-    }
     // Update is called once per frame
     void Update()
     {
-         
+        CheckOnTurretArea();
 
-        if (isOnTurretArea == true)
+        if (isOnTurretArea)
         {
             if (timebetween <= 0)
             {
+                StateT = StatesT.shooting;
                 audioSource.Play();
                 Instantiate(bullet, firepoint.position, firepoint.rotation);
                 timebetween = starttimebetween;
@@ -60,14 +48,34 @@ public class Turret : MonoBehaviour
             else
             {
                 timebetween -= Time.deltaTime;
+                StateT = StatesT.idle;
             }
         }
-        
 
+        Debug.Log(isOnTurretArea);
     }
 
-    
+    public void TakeDamage(int damage)
+    {
+        _health -= damage*Time.deltaTime;
+        if (_health <= 0) Destroy(gameObject);
+    }
 
+    public void CheckOnTurretArea()
+    {
+        Vector2 direction = directionalPoint.position - firepoint.position;
+        RaycastHit2D hit = Physics2D.Raycast(firepoint.position, direction.normalized, direction.magnitude);
+        if (hit)
+        {
+            ITakeDamage damagable = hit.collider.GetComponent<ITakeDamage>();
+            if (damagable != null)
+            {
+                isOnTurretArea = true;
+            }
+            else isOnTurretArea = false;
+        }
+        else isOnTurretArea = false;
+    }
 }
 public enum StatesT
 {

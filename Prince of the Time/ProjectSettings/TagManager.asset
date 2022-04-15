@@ -8,6 +8,8 @@ TagManager:
   - Bullet
   - Shadow
   - Ground
+  - Laser
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -22,7 +24,7 @@ TagManager:
   - Wall
   - Sky
   - Laser
-  - 
+  - Enemy
   - 
   - 
   - 
