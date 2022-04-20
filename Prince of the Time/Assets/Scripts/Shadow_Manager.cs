@@ -60,7 +60,7 @@ public class Shadow_Manager : MonoBehaviour
 
         }else shadowCancel = false; 
        
-        if (Input.GetKeyDown(KeyCode.F)&&shadowExist==false&&shadowCancel==false&&shadowCDCounter==shadowCDLength&&hero_script._isGrounded)
+        if (Input.GetKeyDown(KeyCode.F)&&shadowExist==false&&shadowCancel==false&&shadowCDCounter==shadowCDLength&&hero_script._isGrounded&&!hero_script.isShooting)
         {
             hero_script._anim.SetBool("isRunning", false);
             hero_script.enabled = false;

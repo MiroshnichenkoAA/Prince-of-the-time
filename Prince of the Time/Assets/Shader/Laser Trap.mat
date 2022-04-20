@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Laser Trap
+  m_Shader: {fileID: -6465566751694194690, guid: 26ac97b184bbd81499d445364e4d8da3, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_2dc6bf278a2e4392b5ebe6a13cee26ad: 79.3
+    - Vector1_6705535a4b3d4d9f93ace84325506dac: 10
+    - Vector1_df455dbfabaa47edb1f05993c3483366: 5
+    m_Colors:
+    - Color_bcb591de79bc4226b21bcf5ca8211a2c: {r: 0.8154376, g: 7.7466574, b: 12.639282, a: 1}
+    - Vector2_5f049c6d37d5471fb171adff9ed22665: {r: -0.2, g: 0, b: 0, a: 0}
+  m_BuildTextureStacks: []

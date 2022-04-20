@@ -32,6 +32,30 @@ TextureImporter:
   - first:
       213: 140316113999530675
     second: main character animations 2 (attack etc)_9
+  - first:
+      213: 7788063856783985202
+    second: main character animations 2 (attack etc)_10
+  - first:
+      213: 7175685754218926986
+    second: main character animations 2 (attack etc)_11
+  - first:
+      213: -6340254313612979726
+    second: main character animations 2 (attack etc)_12
+  - first:
+      213: 2322635903832643311
+    second: main character animations 2 (attack etc)_13
+  - first:
+      213: -497611935925146669
+    second: main character animations 2 (attack etc)_15
+  - first:
+      213: 7929458039213088139
+    second: main character animations 2 (attack etc)_17
+  - first:
+      213: 7721608664904082982
+    second: main character animations 2 (attack etc)_19
+  - first:
+      213: -6206496475211877338
+    second: main character animations 2 (attack etc)_21
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -138,10 +162,10 @@ TextureImporter:
         serializedVersion: 2
         x: 1
         y: 268
-        width: 41
+        width: 39
         height: 31
-      alignment: 9
-      pivot: {x: 0.6433622, y: 0.47052}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -159,10 +183,10 @@ TextureImporter:
         serializedVersion: 2
         x: 42
         y: 268
-        width: 41
+        width: 39
         height: 31
-      alignment: 9
-      pivot: {x: 0.6433622, y: 0.47052}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -178,12 +202,12 @@ TextureImporter:
       name: main character animations 2 (attack etc)_2
       rect:
         serializedVersion: 2
-        x: 84
+        x: 83
         y: 268
-        width: 39
-        height: 31
-      alignment: 9
-      pivot: {x: 0.6433622, y: 0.47052}
+        width: 38
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -201,10 +225,10 @@ TextureImporter:
         serializedVersion: 2
         x: 124
         y: 267
-        width: 41
-        height: 31
-      alignment: 9
-      pivot: {x: 0.6433622, y: 0.47052}
+        width: 39
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -220,12 +244,12 @@ TextureImporter:
       name: main character animations 2 (attack etc)_4
       rect:
         serializedVersion: 2
-        x: 164
+        x: 165
         y: 268
-        width: 41
-        height: 31
-      alignment: 9
-      pivot: {x: 0.6433622, y: 0.47052}
+        width: 37
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -244,9 +268,9 @@ TextureImporter:
         x: 205
         y: 268
         width: 41
-        height: 31
-      alignment: 9
-      pivot: {x: 0.6433622, y: 0.47052}
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -262,12 +286,12 @@ TextureImporter:
       name: main character animations 2 (attack etc)_6
       rect:
         serializedVersion: 2
-        x: 249
-        y: 267
+        x: 248
+        y: 268
         width: 41
-        height: 31
-      alignment: 9
-      pivot: {x: 0.6433622, y: 0.47052}
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -286,9 +310,9 @@ TextureImporter:
         x: 1
         y: 236
         width: 41
-        height: 31
-      alignment: 9
-      pivot: {x: 0.6433622, y: 0.47052}
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -307,9 +331,9 @@ TextureImporter:
         x: 47
         y: 236
         width: 41
-        height: 31
-      alignment: 9
-      pivot: {x: 0.6433622, y: 0.47052}
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -328,9 +352,9 @@ TextureImporter:
         x: 91
         y: 236
         width: 41
-        height: 31
-      alignment: 9
-      pivot: {x: 0.6433622, y: 0.47052}
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -338,6 +362,174 @@ TextureImporter:
       bones: []
       spriteID: 3ba843323c082f100800000000000000
       internalID: 140316113999530675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: main character animations 2 (attack etc)_10
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 188
+        width: 23
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23a0ba790d2c41c60800000000000000
+      internalID: 7788063856783985202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: main character animations 2 (attack etc)_11
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 188
+        width: 23
+        height: 29
+      alignment: 9
+      pivot: {x: 0.5037706, y: 0.54785156}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a83dc00dc28259360800000000000000
+      internalID: 7175685754218926986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: main character animations 2 (attack etc)_12
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 188
+        width: 23
+        height: 28
+      alignment: 9
+      pivot: {x: 0.49613655, y: 0.56665474}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f1d57b3b44e208a0800000000000000
+      internalID: -6340254313612979726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: main character animations 2 (attack etc)_13
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 188
+        width: 23
+        height: 30
+      alignment: 9
+      pivot: {x: 0.49618432, y: 0.50142825}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe653867c09ab3020800000000000000
+      internalID: 2322635903832643311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: main character animations 2 (attack etc)_15
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 188
+        width: 23
+        height: 26
+      alignment: 9
+      pivot: {x: 0.5060541, y: 0.5507965}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3dbef2ba4902819f0800000000000000
+      internalID: -497611935925146669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: main character animations 2 (attack etc)_17
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 188
+        width: 25
+        height: 30
+      alignment: 9
+      pivot: {x: 0.46495727, y: 0.4772873}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8d59a813181b0e60800000000000000
+      internalID: 7929458039213088139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: main character animations 2 (attack etc)_19
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 188
+        width: 27
+        height: 31
+      alignment: 9
+      pivot: {x: 0.46314213, y: 0.4474689}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 626af2e7b2aa82b60800000000000000
+      internalID: 7721608664904082982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: main character animations 2 (attack etc)_21
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 188
+        width: 29
+        height: 25
+      alignment: 9
+      pivot: {x: 0.41306856, y: 0.5394604}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6243847d6581ed9a0800000000000000
+      internalID: -6206496475211877338
       vertices: []
       indices: 
       edges: []

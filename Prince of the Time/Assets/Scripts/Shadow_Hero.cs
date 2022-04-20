@@ -106,9 +106,14 @@ public class Shadow_Hero : MonoBehaviour
         _rb.velocity = new Vector2(moveInput * speed, _rb.velocity.y);
         if (moveInput < 0.0f)
         {
+           
             transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, 180, transform.rotation.eulerAngles.z);
         }
-        else transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, 0, transform.rotation.eulerAngles.z);
+        if (moveInput > 0.0f)
+        {
+            
+            transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, 0, transform.rotation.eulerAngles.z);
+        }
 
         if ((moveInput != 0) && _isGrounded) _anim.SetBool("isRunning", true);
         if ((moveInput == 0) && _isGrounded) _anim.SetBool("isRunning", false);

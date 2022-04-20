@@ -13,12 +13,13 @@ public class Hero : MonoBehaviour,ITakeDamage
     [SerializeField] public Turret turret;
     public float jumpTime;
     public float jumpTimeCounter;
-    private bool isJumping;
+    public bool isJumping;
 
     public bool _isGrounded;
     public Transform feetPos;
     public float checkRadius;
     public LayerMask whatIsGround;
+    public bool jumpLanded;
 
     //Links to component
     private Rigidbody2D _rb;
@@ -45,7 +46,9 @@ public class Hero : MonoBehaviour,ITakeDamage
     public GameObject laserParticleEnd;
     public bool isShooting;
     public RaycastHit2D hit;
-    
+    public bool isLookingLeft;
+    public bool isShootingLeft;
+  
 
 
     private void Awake()
@@ -70,72 +73,48 @@ public class Hero : MonoBehaviour,ITakeDamage
         MovementLogic();
         FallDetectorChasingThePlayer();
         DieCheck();
-      
+        IsGroundedCheck();
+       
+
     }
 
     private void Update()
     {
-        IsGroundedCheck();
-        
-        JumpLogic();
-        
-
-        if (Input.GetKeyDown(KeyCode.V) && _isGrounded&&!isShooting)
-        {
-            _anim.SetTrigger("startAttack");
-            EnableLaser();
-            audioSource.Play();
-
-        }
-        if (Input.GetKey(KeyCode.V) && _isGrounded)
-        {
-           
-            _rb.bodyType = RigidbodyType2D.Static;
-            _anim.SetBool("isAttacking", true);
-            UpdateLaser();
-            isShooting = true;
-
-        } 
-       
-
       
-     
+        JumpLogic();
+        AttackLogic();
 
 
 
-
-
-        if (Input.GetKeyUp(KeyCode.V))
-        {
-            audioSource.Stop();
-            isShooting = false;
-            
-            _rb.bodyType = RigidbodyType2D.Dynamic;
-            DisableLaser();
-            _anim.SetBool("isAttacking", false);
-            lineRenderer.SetPosition(1, firePoint.position);
-
-        }
-
-
-
-
+        Debug.Log("ISSHOOTINGLEFT" + isShootingLeft);
     }
+
+
+
+
+
     private void EnableLaser()
-    {
+    { 
+       
+            _anim.SetTrigger("startAttack");
         lineRenderer.enabled = true;
+        audioSource.Play();
     }
+
+
     private void UpdateLaser()
     {
-        
-        lineRenderer.SetPosition(0, firePoint.position);
+        _rb.bodyType = RigidbodyType2D.Static;
+        _anim.SetBool("isAttacking", true);
+        isShooting = true;
+      
+ 
+         lineRenderer.SetPosition(0, firePoint.position);
         lineRenderer.SetPosition(1, maxShotDistance.position);
         laserParticle.SetActive(true);
         laserParticleEnd.SetActive(true);
         laserParticle.transform.position = lineRenderer.GetPosition(0);
      
-
-        
         Vector2 direction = maxShotDistance.position - firePoint.position;
 
          RaycastHit2D hit = Physics2D.Raycast(firePoint.position, direction.normalized, direction.magnitude );
@@ -146,12 +125,48 @@ public class Hero : MonoBehaviour,ITakeDamage
          }
         laserParticleEnd.transform.position = lineRenderer.GetPosition(1);
     }
+
+
     private void DisableLaser()
     {
         lineRenderer.enabled = false;
        laserParticleEnd.SetActive(false);
         laserParticle.SetActive(false);
+        audioSource.Stop();
+        isShooting = false;
+        _rb.bodyType = RigidbodyType2D.Dynamic;
+        _anim.SetBool("isAttacking", false);
+        lineRenderer.SetPosition(1, firePoint.position);
     }
+
+
+    private void AttackLogic()
+    {
+       if (Input.GetKey(KeyCode.V) && _isGrounded && !isShooting)
+        {
+          
+            EnableLaser();
+        }
+        
+
+        if (Input.GetKey(KeyCode.V) && _isGrounded)
+        {
+            
+            UpdateLaser();
+        }
+
+       
+
+        if (Input.GetKeyUp(KeyCode.V))
+        {
+            DisableLaser();
+        }
+
+
+
+        
+    }
+
 
     void OnTriggerEnter2D(Collider2D collision)
     {
@@ -173,26 +188,61 @@ public class Hero : MonoBehaviour,ITakeDamage
         }
     }
     
+
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
     }
 
 
-
-    
     private void MovementLogic()
     {
         
         float moveInput = Input.GetAxis("Horizontal");
-        if(isShooting == false)
+        if (isShooting == false)
+         
        _rb.velocity = new Vector2(moveInput * speed,_rb.velocity.y);
-        if(moveInput < 0.0f &&isShooting==false)
+        if (moveInput < 0.0f)
+        {
+            isLookingLeft = true;
+            transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, 180, transform.rotation.eulerAngles.z);
+        }
+        if(moveInput>0.0f) {
+            isLookingLeft = false;
+            transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, 0, transform.rotation.eulerAngles.z); 
+        }
+
+       
+
+
+      
+        
+
+
+
+
+        if((moveInput < 0.0f)&&isShooting&&!isShootingLeft)
+        {
+            isShootingLeft = true;
+            transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, 180, transform.rotation.eulerAngles.z);
+        }
+
+        if (isShootingLeft&& isShooting)
         {
             transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, 180, transform.rotation.eulerAngles.z);
-        } else transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, 0, transform.rotation.eulerAngles.z);
-        
-      
+
+        }
+       
+        if (moveInput > 0)
+        {
+            isShootingLeft = false;
+            transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, 0, transform.rotation.eulerAngles.z);
+        }
+     
+
+
+
+
         if ((moveInput != 0) && _isGrounded) _anim.SetBool("isRunning", true);
         if ((moveInput == 0) && _isGrounded)  _anim.SetBool("isRunning", false);
     }
@@ -229,7 +279,7 @@ public class Hero : MonoBehaviour,ITakeDamage
         } else _anim.SetBool("isJumping",true);
     }
 
-    
+   
     private void IsGroundedCheck()
     {
         _isGrounded = Physics2D.OverlapCircle(feetPos.position, checkRadius, whatIsGround);
@@ -246,8 +296,9 @@ public class Hero : MonoBehaviour,ITakeDamage
         if (currentHealth <= 0)
         {
             Die();
-
+            
         }
+        
 
     }
     private void Die()

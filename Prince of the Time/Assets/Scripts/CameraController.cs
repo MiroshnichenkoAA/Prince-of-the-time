@@ -12,8 +12,9 @@ public class CameraController : MonoBehaviour
     
     private int LastX;
     [SerializeField] public Shadow_Manager shadowManager;
-    
-    
+    [SerializeField] public Hero hero;
+    private Animator _anim;
+
 
     [SerializeField]
     float leftLimit;
@@ -33,7 +34,8 @@ public class CameraController : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
         offset = new Vector2(Mathf.Abs(offset.x), offset.y);
-        
+
+        _anim = GetComponent<Animator>();
             FindPlayer(isLeft);
         
     }
@@ -70,8 +72,16 @@ public class CameraController : MonoBehaviour
     
     void Update()
     {
-        
 
+        if (hero._isGrounded)
+        {
+            if (hero.jumpLanded)
+            {
+                _anim.SetTrigger("jumpShake");
+                hero.jumpLanded = false;
+            }
+        }
+        else hero.jumpLanded = true;
 
 
         if (shadowManager.shadowExist != true) { 
