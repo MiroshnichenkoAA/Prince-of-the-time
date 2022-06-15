@@ -8,8 +8,7 @@ public class Hero : MonoBehaviour,ITakeDamage
     
     [SerializeField] private float speed;
     [SerializeField] private float jumpForce;
-    public LayerMask enemyLayer;
-
+    
     [SerializeField] public Turret turret;
     public float jumpTime;
     public float jumpTimeCounter;
@@ -53,8 +52,9 @@ public class Hero : MonoBehaviour,ITakeDamage
 
     private void Awake()
     {
+       
         _rb = GetComponent<Rigidbody2D>();
-        _sprite = GetComponentInChildren<SpriteRenderer>();
+        _sprite = GetComponent<SpriteRenderer>();
         _anim = GetComponentInChildren<Animator>();
         audioSource = GetComponent<AudioSource>();
         
@@ -62,6 +62,7 @@ public class Hero : MonoBehaviour,ITakeDamage
 
     private void Start()
     {
+        
         respawnPoint = transform.position;
         currentHealth= maxHealth;
         healthBar.SetMaxHealth(maxHealth);
@@ -293,24 +294,48 @@ public class Hero : MonoBehaviour,ITakeDamage
 
     private void DieCheck()
     {
-        if (currentHealth <= 0)
-        {
-            Die();
-            
+        if ((currentHealth <= 0)&&_isGrounded)
+        { 
+            _rb.bodyType = RigidbodyType2D.Static;
+
+            _anim.SetBool("isDying", true);
+
         }
-        
+        else
+        {
+            _rb.bodyType = RigidbodyType2D.Dynamic;
+            _anim.SetBool("isDying", false);
+
+        }
+
 
     }
-    private void Die()
+    public void Die()
     {
-        transform.position = respawnPoint;
+      
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
+        transform.position = respawnPoint;
+       
+        
     }
 
    
+    public void SaveHero()
+    {
+        Save_System.SavePlayer(this);
+    }
+    public void LoadHero()
+    {
+        Hero_Data data = Save_System.LoadHero();
 
-    
+        currentHealth = data.health;
+        Vector3 position;
+        position.x = data.position[0];
+        position.y = data.position[1];
+        position.z = data.position[2];
+        transform.position = position;
+    }
 
 
 

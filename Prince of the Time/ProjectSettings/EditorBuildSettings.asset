@@ -14,4 +14,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/level1_1cyber.unity
     guid: f16b15e320cd339468a7d6fffaf2ebad
+  - enabled: 1
+    path: Assets/Scenes/demo level.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/lvl1.unity
+    guid: 2fe2254823c2ed3448e8b92472e28b50
+  - enabled: 1
+    path: Assets/Scenes/lvl1_lab_enter_room.unity
+    guid: 513f4a1193880e34aa3f6ba77a0afa63
+  - enabled: 1
+    path: Assets/Scenes/lvl1_lab.unity
+    guid: eac03008f0a82834294184b99e8ce759
   m_configObjects: {}

@@ -30,11 +30,11 @@ public class Enemy_Robot : MonoBehaviour, ITakeDamage
     public LineRenderer lineRender;
     [SerializeField] private float damageSpeed;
 
-    [SerializeField] private Transform _player;
+     [SerializeField] private  GameObject _player;
     // Start is called before the first frame update
     void Start()
     {
-       
+       _player = GameObject.FindGameObjectWithTag("Player");
         timeBtwShots = startTimeBtwShots;
         _audioSource = GetComponent<AudioSource>();
         currentHealth = maxHealth;
@@ -58,29 +58,28 @@ public class Enemy_Robot : MonoBehaviour, ITakeDamage
             Patroling();
         }
 
-        Debug.Log(currentHealth);
-       // CheckDamage();
+     
         CheckHealth();
     }
 
    private void Chasing()
     {
-        if (Vector2.Distance(transform.position, _player.position) > _stoppingDistance)
+        if (Vector2.Distance(transform.position, _player.transform.position) > _stoppingDistance)
         {
-            transform.position = Vector2.MoveTowards(transform.position, _player.position, _speed * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, _player.transform.position, _speed * Time.deltaTime);
         }
-        else if (Vector2.Distance(transform.position, _player.position) < _stoppingDistance && Vector2.Distance(transform.position, _player.position) > _retrearDistance)
+        else if (Vector2.Distance(transform.position, _player.transform.position) < _stoppingDistance && Vector2.Distance(transform.position, _player.transform.position) > _retrearDistance)
         {
             transform.position = this.transform.position;
         }
-        else if (Vector2.Distance(transform.position, _player.position) < _retrearDistance)
+        else if (Vector2.Distance(transform.position, _player.transform.position) < _retrearDistance)
         {
-            transform.position = Vector2.MoveTowards(transform.position, _player.position, -_speed * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, _player.transform.position, -_speed * Time.deltaTime);
         }
     }
     private void Flipping()
     {
-        if (_player.position.x > transform.position.x)
+        if (_player.transform.position.x > transform.position.x)
         {
             this.transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, 180, transform.rotation.eulerAngles.z);
 
@@ -133,7 +132,7 @@ public class Enemy_Robot : MonoBehaviour, ITakeDamage
 
     private void IsNearRoboCheck()
     {
-        if ((Vector2.Distance(transform.position, _player.position) < checkDistance))
+        if ((Vector2.Distance(transform.position, _player.transform.position) < checkDistance))
         {
             
             isOnRoboArea = true;
